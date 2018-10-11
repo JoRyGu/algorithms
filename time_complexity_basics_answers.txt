@@ -1,0 +1,38 @@
+EXERCISES
+1. What is time complexity and what is its relation to algorithms.
+  - Time complexity refers to the number of operations that an algorithm needs to perform relative to the size of the
+    input. It is used to give a rough measurement of the efficiency of an algorithm while solving a particular problem.
+
+2. What is runtime?
+  - Runtime refers to the physical time duration of an algorithm while it's performing operations.
+
+3. How is the runtime of an algorithm calculated?
+  - The runtime of an algorithm is determined by adding up the number of operations necessary for the algorithm to return
+    given an input n. Then, the function is simplified to the largest term and constants are dropped. 
+
+4. Name the six times of algorithm growth rates we saw in this checkpoint and list them in order of most efficient to least
+   efficient.
+   - O(1)
+   - O(n)
+   - O(log n)
+   - O n(log n)
+   - O n^2
+   - O (2^n)
+   - O (n!)
+
+5. Choose one of the algorithmic growth rates from the last question and make a comparison to a real-life situation.
+  - O(n)
+  - Determining the fastest bobsled team in the olympics takes O(n) time. The time it takes to determine the best bobsled team
+    is linearly proportional to how many bobsled teams have to run the track.
+
+6. Determine the time complexity of the following snippet of code, known as a linear search:
+  - O(n)
+
+7. Determine the time complexity of the following snippet of code.
+  - O(n^2)
+
+8. Determine the time complexity of the following snippet of code, known as the fibonacci sequence
+  - O(2^n)
+
+9. Out of the code snippets that you just saw, which is the most time efficient?
+  - The linear search algorithm, with a time complexity of O (n).
