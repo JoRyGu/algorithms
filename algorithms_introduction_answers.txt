@@ -1,0 +1,54 @@
+EXERCISES
+
+1. Using proper pseudo-code, describe the following primitive algorithms:
+  - Making Coffee:
+    SET the number of K-Cups in your hand to 1
+    SET the Keurig Machine to ON
+    SET the cup size to MEDIUM
+    INSERT the K-Cup into the brewing chamber
+    DECREMENT the number of K-cups in your hand
+    SET the brewing cycle to ON
+    FOR 2 minutes
+      RUN wait FUNCTION
+    END FOR
+  - Washing Dishes:
+    SET the water level to 50% of the sink height
+    SET the amount of dish soap to 2 ounces
+    SUM the water and dish soap
+    PUSH all dirty dishes to the dirty dish STACK
+    FOR every dish in the dish STACK
+      POP the next dish from the dirty dish stack into the water
+      RUN the scrub dish FUNCTION on the current dish and RETURN the clean dish
+      PUSH the dish to the drying rack array
+    END FOR
+    FOR every dish in the drying rack array
+      POP dish into the cabinet
+    END FOR
+  - My Choice: Making Dinner:
+    SET number of cell phones in your hand to 1
+    RUN dial pizza hut number FUNCTION
+    RUN order piza FUNCTION with parameters LARGE and CHEESE
+    WHILE pizza is being delivered
+      RUN wait FUNCTION
+    END WHILE
+    IF doorbell rings THEN
+      RUN answer door function
+    ELSE
+      RUN dial pizza hut number FUNCTION
+    END IF
+
+2. Name three companies who created an algorithm that made them successeful (doesn't have to be tech).
+  1. Ford's "algorithm" for making a car revolutionized the automobile manufacturing industry. His alogrithm was the assembly line.
+  2. Coca-Cola's "algorithm" for soda has turned them into a global empire. I can't quite tell what it is about the formula, but
+     something about a Coke is just BETTER than any other soda.
+  3. Netflix's use of algorithms to predict movies and shows that I should enjoy. It still amazes me how accurate the recommendations
+     usually are, and I think that's a huge part of why Netflix's streaming on demand service has forever altered the way we 
+     consume media.
+
+3. Hypothesize about what constitutes an efficient algorithm versus an inefficient algorithm.
+  - An efficient algorithm is one that limits the number of operations necessary to provide the desired solution to a specific
+    problem. An inefficient algorithm is one that may find the correct answer, but requires significantly more operations to arrive
+    in the correct place. For example, in a search algorithm, limiting the number of elements or loops necessary to find the search
+    value creates an efficient algorithm. On average a binary search would find the search value much more quickly than a linear search.
+    
+
