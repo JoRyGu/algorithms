@@ -1,0 +1,62 @@
+1. Define and compare recursion and iteration.
+  - Recursion is when a program calls itself in order to break down the problem into smaller problems until reaching a base
+    case. Iteration is looping through some set of data in order to solve a problem. Recursion is an elegant way to solve
+    problems, and can sometimes be very clean to implement, but can also be slow or resource intensive. Iteration can be
+    more readable for certain applications and tends to be more performant as well.
+
+2. Name five algorithms that are commonly implemented by recursion.
+  - binary search, merge sort, quick sort, factorial, and the Fibonacci sequence.
+
+3. When should you use recursion, and when should you avoid recursion?
+  - You should use recursion when a problem is able to be broken down into sub-problems. You should use iteration when the
+    application will benefit from its clean, easy-to-understand language and its performance.
+
+4. Compare the recursive and iterative solutions to the three algorithms from the checkpoint. What is
+   similar, what is different?
+  - All of the solutions have to loop through some data in some way. I found the recursive solution to the factorial and 
+    Fibonacci sequence problems much cleaner and easier to understand what was going on. I also found the iterative solution
+    to the maxValue problem far cleaner than the recursive solution. In my opinion, clean code is much more value than a 
+    "clever" solution. While it's neat that you can solve the maxValue problem with recursion, I would hate to run into that
+    in the real world and try to figure out what it was supposed to be doing. While I might understand what the iterative
+    solution to the factorial and Fibonacci sequence problems is doing, the recursive solution is just cleaner.
+
+5. Given a multi-dimensional collection (such as an array) where the number of dimensions is unknown, 
+   write a recursive algorithm to count the number of items in the entire collection.
+
+   function recursiveElementCounter(collection) {
+    if(typeof collection === 'number') {
+      return 1;
+    }
+
+    return collection.map(element => recursiveElementCounter(element)).reduce((acc, cur) => acc + cur);
+  }
+
+6. A palindrome is a word or phrase whose spelling is the same either direction. Write a recursive algorithm
+   to determine if a given word is a palindrome.
+
+   function palindrome(text) {
+    text = text.toLowerCase();
+    if(text.length === 1) {
+      return true;
+    }
+
+    if(text.length === 2) {
+      if(text[0] === text[1]) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    if (text[0] === text[text.length - 1]) {
+      return palindrome(text.slice(1, text.length - 1));
+    } else {
+      return false;
+    }
+  }
+
+7. Google Easter Egg: Google the term "recursion." Google will prompt you with "Did you mean recursion?" Explain
+   why this behavior exhibits properties of recursion.
+  - When the user "calls" the search term "recursion", Google "returns" the search term "recursion", which when clicked
+    will call the search term "recursion", and so on. Overall it exhibits the looping nature of recursion, and accurately 
+    displays it as an infinite loop when it comes to me attempting to write recursive algorithms :P
