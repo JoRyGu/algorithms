@@ -1,0 +1,77 @@
+SHORT ANSWER
+1. What is a real-life scenario that uses linear search?
+  - You're waiting to pick up someone named Dave at the airport. You don't know Dave
+    by sight, so you have to ask the departing passengers their name, one by one, until
+    you find Dave.
+
+2. What is a real-life scenario that uses binary search?
+  - Browsing for books in a libarary. You might start at a more arbitrary point than
+    the exact middle, but the principle is the same. Is the title of the book after
+    M or before M in alphabetical order. If it's before M go to the left, etc, etc.
+
+3. Given the alphabetically sorted collection in this checkpoint, how many iterations 
+   would it take to find the value G using linear search?
+   - 7, one for each element of the list.
+
+4. Given the alphabetically sorted collection in this checkpoint, how many iterations
+   would it take to find the value of G using binary search?
+   - 3 if you implemented binary search as shown in the example. 1 if you implemented
+     a check against the start and end index before starting the loop.
+
+5. Given an unsorted collection of a million items, which algorithm would you choose between
+   linear search and binary search? Explain your reasoning.
+    - I would choose linear search. Binary search only works on sorted lists. In order to implement
+      binary search I would have to sort the collection which would mean iterating through the list
+      at least once in the absolute best case. Linear search at the worst case would loop through the
+      entire list one time.
+
+6. Given a sorted collection of a million items, which algorithm would you choose between
+   linear search and binary search? Explain your reasoning.
+   - I would choose binary search. Because the collection is sorted, binary search is able to complete
+     in O (log n) time, which is much faster than the O (n) time that linear search would take.
+
+PROGRAMMING ASSIGNMENT
+
+1. You and a friend have set a wager to see who can find the word "Albatross" in the dictionary
+   the fastest. Write a program to allow you to win the bet.
+
+   function dictionarySearch(word, dictionary) {
+    let start = 0;
+    let end = dictionary.length - 1;
+    let mid = Math.floor(dictionary.length / 2);
+
+    while(start < end) {
+      if (word === dictionary[mid]) {
+        return mid;
+      } else if (word === dictionary[start]) {
+        return start;
+      } else if (word === dictionary[end]) {
+        return end;
+      }
+
+      if (word < dictionary[mid]) {
+        end = mid;
+        mid = Math.floor((end + start) / 2);
+        end--;
+      } else {
+        start = mid;
+        mid = Math.floor((end + start) / 2);
+        start++;
+      }
+    }
+
+    return -1;
+  }
+
+2. You work at a pet store, and a child has asked you to net the only white-spotted goldfish from the 
+   fish tank. Write a program that will help you net the right fish.
+
+   function goldfishFinder(fishType, fishTank) {
+    for(let i = 0; i < fishTank.length; i++) {
+      if(fishTank[i] === fishType) {
+        return i;
+      }
+    }
+
+    return -1;
+  }
