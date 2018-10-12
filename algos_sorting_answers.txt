@@ -1,0 +1,66 @@
+EXERCISES
+1. Write pseudocode for bubblesort.
+  FUNCTION bubbleSort(collection)
+    SET listEnd to last index in collection
+    WHILE listEnd is GREATER THAN 1
+      FOR every index from 0 to listEnd
+        IF the collection at this index is GREATER THAN the collection at the next index THEN
+        SET temp to the value at this index
+        SET the value at this index to the value at the next index
+        SET the value at the next index to temp
+      END FOR
+      DECREMENT listEnd
+    END WHILE
+  END FUNCTION
+
+2. Write pseudocode for quicksort.
+  FUNCTION quickSort(collection)
+    IF the length of the collection is LESS THAN or EQUAL TO 1 THEN
+      RETURN the collection
+    END IF
+    SET pivot to the last element of the collection
+    REMOVE the last element from the collection
+    SET left to an empty array
+    SET right to an empty array
+    SET sortedArray to an empty array
+    FOR every index from 0 to the last index of the collection
+      IF the collection at this index is LESS THAN or EQUAL TO pivot THEN
+        PUSH the element at this index to the end of left
+      ELSE
+        PUSH the element at this index to the end of right
+      END IF
+    END FOR
+    SET quickSortLeft to CALL the quickSort FUNCTION on left
+    SET quickSortRight to CALL the quickSort FUNCTION on right
+    CONCATENATE quickSortLeft to the end of sortedArray
+    CONCATENATE pivot to the end of sortedArray
+    CONCATENATE quickSortRight to the end of sortedArray
+    RETURN sortedArray
+  END FUNCTION
+
+3. Identify why mergesort and quicksort are much more efficient than others.
+  - Bubble sort, selection sort, and insertion sort all have worst-case time complexities
+    of O (n^2). This is due to the fact that all of them potentially need to loop through
+    the data the length of the list times the length of the list in order to get everything
+    sorted properly. This is guaranteed with selection sort. Bubble sort and insertion 
+    sort have a best case of O (n) time complexity if only one element is out of place.
+
+    Because that scenario is very unlikely when it comes to sorting a list, merge sort and
+    quck sort are generally much more efficient. This is due to their "divide and conquer" 
+    methodology, which is reminiscent of the O (log n) time complexity of a binary search.
+    Because both of these algorithms have to loop through the list one time fully, which is
+    linear time complexity, and cut the amount of elements that need to be sorted in half every
+    iteration, O (log n) time complexity, their time complexity is 0 n(log n), which is 
+    extremely fast in comparison to O (n^2).
+
+4. Research bucket sort and explain how it works. What is the ideal input for bucket sort?
+  - Rather than directly comparing all of the values to one another, bucket sort takes the
+    length of the collection, then creates that number of "buckets." It then multiplies the
+    value at each index of the collection by the total number of buckets and puts that value 
+    in the resulting index position (collection[i] * n). It then runs insertion sort on each
+    bucket, then concatenates them all together.
+
+    The ideal input for a bucket sort is most useful when it is uniformly distributed over a range.
+    this allows the minimum number of insertion sort operations to occur. Depending on what the 
+    input is, bucket sort can have as low as an O (n) time complexity (when used with ideal input)
+    and O (n^2) time complexity in the worst case.
